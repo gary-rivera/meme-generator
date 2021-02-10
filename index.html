@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Genie</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <p class="title"><img src="images/GenieLamp.svg" id="lamp"></img>Meme Genie</p>
+        <form>
+          <input class="form" id="url" type="text" value="URL" />
+          <input
+            class="form"
+            id="topText"
+            type="text"
+            value="Top Text (optional)"
+          />
+          <input
+            class="form"
+            id="bottomText"
+            type="text"
+            value="Bottom Text (optional)"
+          />
+          <input id="generateBtn" type="submit" value="GENERATE" />
+        </form>
+      </div>
+      <div id="memeWindow"> </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+body {
+  background-color: #82589f;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+
+  /*Fallback if gradeints don't work */
+  background: #82589f;
+  /*Linear gradient... */
+  background: radial-gradient(at center, #d6a2e8, #82589f);
+}
+
+.title {
+  font-size: 2em;
+  padding-top: 5px;
+  color: white;
+  margin-bottom: 1px;
+}
+
+#lamp {
+  width: 1em;
+  margin-left: 5px;
+}
+
+.header {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  margin: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 300px;
+  border-radius: 25px;
+}
+
+.form {
+  color: rgba(73, 61, 91, 0.3);
+  background-color: whitesmoke;
+  font-size: 12px;
+  border-radius: 5px;
+  height: 15px;
+  border: none;
+  font-family: 'Yusei Magic', sans-serif;
+  width: 250px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
+  margin: 3px;
+}
+
+.form:active {
+  background-color: white;
+}
+
+.form:focus,
+#generateBtn:focus {
+  border: none;
+  outline: none;
+}
+
+#generateBtn {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(246, 244, 249);
+  color: darkgray;
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+#generateBtn:active {
+  color: rgba(0, 0, 0, 0.6);
+  transform: scale(0.98);
+  box-shadow: rgba(60, 64, 67, 0.5) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#memeWindow {
+  margin: 25px;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+.disappear {
+  margin: 5px;
+  max-width: 300px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.meme {
+  margin: 5px;
+  max-width: 300px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+canvas {
+  position: relative;
+  max-width: inherit;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.meme:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
+}
