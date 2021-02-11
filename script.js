@@ -30,23 +30,30 @@ topText.addEventListener('change', e => topText = e.target.value);
 let bottomText = document.querySelector('#bottomText')
 bottomText.addEventListener('change', e => bottomText = e.target.value);
 
+
 //function to generate meme from the above variables
-function generateMeme(img, tText, bText) {
-    
+function generateMeme(urlImg, tText, bText) {
+
+    if (url === undefined) alert('Please enter a valid URL')
+
+    // if input text invalid convert to empty string
+    if (typeof tText === 'object') {tText = ''}
+    if (typeof bText === 'object') {bText = ''}
+
     // create canvas for everything to attach to
     let meme = document.createElement('canvas')
     let ctx = meme.getContext('2d');
     
     //meme size = dynamic
-    meme.width = img.width;
-    meme.height = img.height;
+    meme.width = urlImg.width;
+    meme.height = urlImg.height;
     ctx.clearRect(0, 0, meme.width, meme.height);
 
     //draw img to background as bottom layer
-    ctx.drawImage(img, 0,0);
+    ctx.drawImage(urlImg, 0,0);
 
     //font formatting
-    let fontSize = meme.width / 10; // or canvasWidth * 0.15 this ensure font size is relative to meme size
+    let fontSize = meme.width / 10; 
     ctx.font = fontSize + 'px Impact';
     ctx.fillStyle = 'white'
     ctx.strokeStyle = 'black'
@@ -63,10 +70,10 @@ function generateMeme(img, tText, bText) {
     ctx.fillText(bText, meme.width/2, meme.height - 5, meme.width)
     ctx.strokeText(bText, meme.width/2, meme.height - 5, meme.width)
 
-    return meme
+    return meme;
 }
 
-// once button is clicked
+// once 'generatebtn' is clicked
 let generateBtn = document.querySelector('#generateBtn'); 
 generateBtn.addEventListener('click', function appendToMemeWindow(e) {
     // prevent reload
@@ -76,7 +83,7 @@ generateBtn.addEventListener('click', function appendToMemeWindow(e) {
     let meme = generateMeme(url, topText, bottomText);
     meme.setAttribute('class', 'meme')
 
-    //if clicked remove element. 
+    //addEvent if clicked remove element. 
     meme.addEventListener('click', function(e) {
         e.target.setAttribute('class', 'disappear')
 
@@ -84,13 +91,17 @@ generateBtn.addEventListener('click', function appendToMemeWindow(e) {
             memeWindow.removeChild(meme)}, 380);
     })
 
-    //append meme to DOM
+    //append container/meme+overlay to doc.body.memeWindow
     memeWindow.appendChild(meme);
     
     // reset forms
-    document.querySelector('form').reset()
-    url = undefined;
+    document.querySelector('form').reset();
+    url = '';
+    topText = '';
+    bottomText = '';
+
 });
+
 
 
 //background follow cursor while on screen 
