@@ -121,4 +121,5 @@ canvas {
   background-color: yellow;
   transition: 0.3s ease-in-out;
   transform: scale(0.95);
+  opacity: 0.5;
 }
